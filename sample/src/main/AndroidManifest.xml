@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wada811.viewlifecycleproperty.sample">
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".SampleActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".sample1_val_by_lazy.Sample1Activity"
+            android:label="val by lazy" />
+        <activity
+            android:name=".sample2_var_nullable.Sample2Activity"
+            android:label="var nullable" />
+        <activity
+            android:name=".sample3_lateinit_var.Sample3Activity"
+            android:label="lateinit var" />
+        <activity
+            android:name=".sample4_auto_cleared.Sample4Activity"
+            android:label="AutoClearedValue" />
+        <activity
+            android:name=".sample5_view_lifecycle.Sample5Activity"
+            android:label="ViewLifecycleProperty" />
+    </application>
+
+</manifest>
