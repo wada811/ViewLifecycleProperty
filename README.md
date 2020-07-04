@@ -1,8 +1,7 @@
 ViewLifecycleProperty
 =====
 
-The `ViewLifecycleProperty` library makes the property not-null, lazy and auto-cleared.
-ViewLifecycleProperty is the property that has the same lifecycle as Fragment's view like `binding`, `adapter` and so on.
+ViewLifecycleProperty makes easy declaring the property that has the same lifecycle as Fragment's view.
 
 ## Overview
 ViewLifecycleProperty is
