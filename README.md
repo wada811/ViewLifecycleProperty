@@ -4,13 +4,17 @@ ViewLifecycleProperty
 ViewLifecycleProperty makes easy declaring the property that has the same lifecycle as Fragment's view.
 
 ## Overview
+
 ViewLifecycleProperty is
+
 - lazy initialization
 - accessible when Fragment's view isn't null i.e., between onCreateView and onDestroyView
 - automatically cleared by null when Fragment's view released i.e., after onDestroyView
 
 ## Usage
+
 ### val by lazy style
+
 ```kotlin
 class SampleFragment : Fragment(R.layout.sample_fragment) {
     private val property: SampleProperty by viewLifecycle { SampleProperty(viewLifecycleOwner) }
@@ -26,6 +30,7 @@ class SampleFragment : Fragment(R.layout.sample_fragment) {
 ```
 
 ### AutoClearedValue style
+
 ```kotlin
 class SampleFragment : Fragment(R.layout.sample_fragment) {
     private var property: SampleProperty by viewLifecycle()
@@ -44,15 +49,15 @@ class SampleFragment : Fragment(R.layout.sample_fragment) {
 
 ## Gradle
 
-[![](https://jitpack.io/v/wada811/ViewLifecycleProperty.svg)](https://jitpack.io/#wada811/ViewLifecycleProperty)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.wada811.viewlifecycleproperty/viewlifecycleproperty/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.wada811.viewlifecycleproperty/viewlifecycleproperty)
 
 ```groovy
 repositories {
-    maven { url "https://www.jitpack.io" }
+    mavenCentral()
 }
 
 dependencies {
-    implementation 'com.github.wada811:ViewLifecycleProperty:x.y.z'
+    implementation 'com.wada811.viewlifecycleproperty:viewlifecycleproperty:x.y.z'
 }
 ```
 
