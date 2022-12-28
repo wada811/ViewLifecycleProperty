@@ -4,17 +4,18 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.wada811.databinding.dataBinding
+import com.wada811.databinding.withBinding
 import com.wada811.viewlifecycleproperty.sample.R
 import com.wada811.viewlifecycleproperty.sample.SampleProperty
 import com.wada811.viewlifecycleproperty.sample.databinding.BackStackFragmentBinding
 
 class Sample1Fragment : Fragment(R.layout.back_stack_fragment) {
-    private val binding: BackStackFragmentBinding by dataBinding()
     private val property by lazy { SampleProperty(viewLifecycleOwner.lifecycle, requireContext(), R.string.app_name) }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.text = requireArguments().getString(EXTRA_TEXT)
+        withBinding<BackStackFragmentBinding> { binding ->
+            binding.text = requireArguments().getString(EXTRA_TEXT)
+        }
         Log.d("ViewLifecycleProperty", "property.log: ${property.log}")
     }
 

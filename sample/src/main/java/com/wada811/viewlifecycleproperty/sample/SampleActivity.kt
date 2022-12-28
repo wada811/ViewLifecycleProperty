@@ -6,7 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.wada811.databinding.dataBinding
+import com.wada811.databinding.withBinding
 import com.wada811.viewlifecycleproperty.sample.databinding.SampleActivityBinding
 import com.wada811.viewlifecycleproperty.sample.databinding.SampleListItemBinding
 import com.wada811.viewlifecycleproperty.sample.sample1_val_by_lazy.Sample1Activity
@@ -16,21 +16,22 @@ import com.wada811.viewlifecycleproperty.sample.sample4_auto_cleared.Sample4Acti
 import com.wada811.viewlifecycleproperty.sample.sample5_view_lifecycle.Sample5Activity
 
 class SampleActivity : AppCompatActivity(R.layout.sample_activity) {
-    private val binding: SampleActivityBinding by dataBinding()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Samples.values().forEach { sample ->
-            val itemBinding = DataBindingUtil.inflate<SampleListItemBinding>(
-                layoutInflater,
-                R.layout.sample_list_item,
-                binding.container,
-                false
-            )
-            itemBinding.viewModel = sample
-            itemBinding.root.setOnClickListener {
-                startActivity(sample.createIntent(this@SampleActivity))
+        withBinding<SampleActivityBinding> { binding ->
+            Samples.values().forEach { sample ->
+                val itemBinding = DataBindingUtil.inflate<SampleListItemBinding>(
+                    layoutInflater,
+                    R.layout.sample_list_item,
+                    binding.container,
+                    false
+                )
+                itemBinding.viewModel = sample
+                itemBinding.root.setOnClickListener {
+                    startActivity(sample.createIntent(this@SampleActivity))
+                }
+                binding.container.addView(itemBinding.root)
             }
-            binding.container.addView(itemBinding.root)
         }
     }
 
