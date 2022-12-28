@@ -4,6 +4,7 @@ apply plugin: 'kotlin-kapt'
 apply from: "${rootDir}/publish-module.gradle"
 
 android {
+    namespace "com.wada811.viewlifecycleproperty"
     compileSdkVersion 33
     defaultConfig {
         minSdkVersion 21

@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
+    namespace "com.wada811.viewlifecycleproperty.sample"
     compileSdkVersion 33
     defaultConfig {
         applicationId "com.wada811.viewlifecycleproperty.sample"
