@@ -17,11 +17,8 @@ jobs:
           distribution: adopt
           java-version: 11
 
-      - name: Publish to MavenLocal
-        run: ./gradlew publishReleasePublicationToMavenLocal
-
       - name: Publish to MavenCentral
-        run: ./gradlew --max-workers 1 publishReleasePublicationToSonatypeRepository closeAndReleaseSonatypeStagingRepository
+        run: ./gradlew --max-workers 1 publishReleasePublicationToMavenLocal publishReleasePublicationToSonatypeRepository closeAndReleaseSonatypeStagingRepository
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
