@@ -44,5 +44,5 @@ dependencies {
     implementation 'com.github.wada811:DataBinding-ktx:6.1.0'
 //    implementation project(':ViewLifecycleProperty')
     implementation 'com.wada811.viewlifecycleproperty:viewlifecycleproperty:1.0.0'
-    implementation 'com.squareup.leakcanary:leakcanary-android:2.2'
+    implementation 'com.squareup.leakcanary:leakcanary-android:2.10'
 }
