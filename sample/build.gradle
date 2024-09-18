@@ -40,7 +40,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10"
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.fragment:fragment-ktx:1.6.1'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.8.6'
     implementation 'com.github.wada811:DataBinding-ktx:6.1.0'
 //    implementation project(':ViewLifecycleProperty')
     implementation 'com.wada811.viewlifecycleproperty:viewlifecycleproperty:1.1.0'
